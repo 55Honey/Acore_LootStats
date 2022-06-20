@@ -1,5 +1,19 @@
--- Runs this query manually once:
+--
+--
+-- Created by IntelliJ IDEA.
+-- User: Silvia
+-- Date: 20/06/2022
+-- Time: 22:54
+-- To change this template use File | Settings | File Templates.
+-- Originally created by Honey for Azerothcore
+-- requires ElunaLua module
+
+------------------------------------------------------------------------------------------------
+-- This script serves to log amounts dropped of certain items listed in 'lootlist'
+------------------------------------------------------------------------------------------------
+-- ADMIN GUIDE:  - Run this query manually once:
 -- CREATE TABLE IF NOT EXISTS `ac_eluna`.`lootcounter` (`timestamp_start` INT NOT NULL, `timestamp_end` INT NOT NULL, `item` VARCHAR(50), `amount` INT DEFAULT 0, PRIMARY KEY (`timestamp_start`, `item`) );
+------------------------------------------------------------------------------------------------
 
 local PLAYER_EVENT_ON_LOOT_ITEM = 32        -- (event, player, item, count)
 local ELUNA_EVENT_ON_LUA_STATE_CLOSE = 16   -- (event) - triggers just before shutting down eluna (on shutdown and restart)
