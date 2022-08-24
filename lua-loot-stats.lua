@@ -61,9 +61,11 @@ local lootcounter = {}
 local starttime = tonumber( tostring( GetGameTime() ) )
 
 local function OnLootItem( event, player, item, count )
-    local index = returnIndex( lootlist, item:GetName() )
-    if index ~= false then
-        lootcounter[index] =  lootcounter[index] + count
+    if item then
+        local index = returnIndex( lootlist, item:GetName() )
+        if index ~= false then
+            lootcounter[index] =  lootcounter[index] + count
+        end
     end
 end
 
